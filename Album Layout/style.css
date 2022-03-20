@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+
+*,
+*::before,
+*::after{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* html,body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+} */
+
+body{
+     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+.albums{
+     display: grid;
+     /* this makes the grid fit the content automatically like if 2 can come in the screen then 2 cols will be there if 3 can then 3 and so on....minmax() makes the cols go as big as 1fr means whole width and 500px is the min size */
+     grid-template-columns: repeat(auto-fit, minmax(500px,1fr));
+     grid-gap: 20px;
+}
+
+.album{
+     display: grid;
+     /* making 2 cols...1st of 200px and 2nd of rest of the space */
+     grid-template-columns: 200px 1fr;
+     padding: 2rem;
+     grid-gap: 10px;
+     background: rgba(255,255,255,0.2);
+     box-shadow: 0 0 5px rgba(0,0,0,0.1);
+     color: #fff;
+     align-items: center;
+}
+
+/* without this the image stays 300px wide and overlaps with the text col and cause prob */
+.album__artwork{
+     width: 100%;
+}
